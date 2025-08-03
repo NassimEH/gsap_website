@@ -4,10 +4,15 @@ import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 import React from 'react';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 const App = () => {
     return (
-        <div> <h1 className="text-3xl text-indigo-300"> Hello world !</h1> </div>
+        <main>
+            <Navbar />
+            <Hero />
+        </main>
     )
 }
 export default App;
