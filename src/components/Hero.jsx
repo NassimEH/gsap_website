@@ -23,18 +23,18 @@ const Hero = () => {
 	
 	gsap.from(heroSplit.chars, {
 	 yPercent: 100,
-	 duration: 1.8,
+	 duration: 2.5, // Augmenté de 1.8 à 2.5 secondes
 	 ease: "expo.out",
-	 stagger: 0.06,
+	 stagger: 0.08, // Légèrement plus lent
 	});
 	
 	gsap.from(paragraphSplit.lines, {
 	 opacity: 0,
 	 yPercent: 100,
-	 duration: 1.8,
+	 duration: 2.5, // Augmenté de 1.8 à 2.5 secondes
 	 ease: "expo.out",
-	 stagger: 0.06,
-	 delay: 1,
+	 stagger: 0.08, // Légèrement plus lent
+	 delay: 1.2, // Délai légèrement augmenté
 	});
 	
 	gsap
@@ -43,7 +43,7 @@ const Hero = () => {
 		trigger: "#hero",
 		start: "top top",
 		end: "bottom top",
-		scrub: true,
+		scrub: 2, // Ralenti le parallax des feuilles
 	 },
 	})
 	.to(".right-leaf", { y: 200 }, 0)
@@ -58,7 +58,7 @@ const Hero = () => {
 		trigger: "video",
 		start: startValue,
 		end: endValue,
-		scrub: true,
+		scrub: 3, // Ralenti l'animation (plus la valeur est élevée, plus c'est lent)
 		pin: true,
 	 },
 	});
@@ -73,7 +73,7 @@ const Hero = () => {
  return (
 	<>
 	 <section id="hero" className="noisy">
-		<h1 className="title">CAFÉ PARISIEN</h1>
+		<h1 className="title">CAFÉ</h1>
 		
 		<img
 		 src="/images/hero-left-leaf.png"
@@ -91,17 +91,17 @@ const Hero = () => {
 		 
 		 <div className="content">
 			<div className="space-y-5 hidden md:block">
-			 <p>Authentique. Savoureux. Traditionnel.</p>
+			 <p>Riche. Aromatique. Authentique.</p>
 			 <p className="subtitle">
-				Découvrez l'Art <br /> du Café Français
+				Savourez l'Élégance <br /> du Café Français
 			 </p>
 			</div>
 			
 			<div className="view-cocktails">
 			 <p className="subtitle">
-				Chaque café que nous servons est préparé avec des grains sélectionnés 
-				et un savoir-faire artisanal, pour vous offrir une expérience gustative 
-				authentiquement française.
+				Chaque café que nous servons est un mélange d'ingrédients de première qualité,
+				de créativité artisanale et de recettes traditionnelles — conçu pour éveiller
+				vos sens à l'art français du café.
 			 </p>
 			 <a href="#cocktails">Découvrir nos cafés</a>
 			</div>
@@ -115,7 +115,7 @@ const Hero = () => {
 		 muted
 		 playsInline
 		 preload="auto"
-		 src="/videos/coffee.mp4"
+		 src="/videos/output.mp4"
 		/>
 	 </div>
 	</>
