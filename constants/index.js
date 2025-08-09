@@ -8,6 +8,10 @@ const navLinks = [
 	title: "À propos",
  },
  {
+	id: "history",
+	title: "Notre Histoire",
+ },
+ {
 	id: "work",
 	title: "Nos produits",
  },
@@ -39,6 +43,8 @@ const mockTailLists = [
   { name: "Omelette Fines Herbes", country: "Paris", detail: "Œufs fermiers, ciboulette", price: "€8,50" },
 ];
 
+const allCocktails = [...cocktailLists, ...mockTailLists];
+
 const profileLists = [
  {
 	imgPath: "/images/profile1.png",
@@ -69,19 +75,19 @@ const goodLists = [
 ];
 
 const storeInfo = {
- heading: "Where to Find Us",
- address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
+ heading: "Où nous trouver",
+ address: "123 Rue de Rivoli, 75001 Paris, France",
  contact: {
-	phone: "(555) 987-6543",
-	email: "hello@jsmcocktail.com",
+	phone: "01 42 36 78 90",
+	email: "bonjour@milkydeal.fr",
  },
 };
 
 const openingHours = [
- { day: "Mon–Thu", time: "11:00am – 12am" },
- { day: "Fri", time: "11:00am – 2am" },
- { day: "Sat", time: "9:00am – 2am" },
- { day: "Sun", time: "9:00am – 1am" },
+ { day: "Lun–Jeu", time: "7h00 – 19h00" },
+ { day: "Ven", time: "7h00 – 20h00" },
+ { day: "Sam", time: "8h00 – 20h00" },
+ { day: "Dim", time: "8h00 – 18h00" },
 ];
 
 const socials = [
@@ -137,10 +143,69 @@ const sliderLists = [
  },
 ];
 
+const historyTimeline = [
+  {
+    year: "1995",
+    title: "Les premiers grains",
+    description: "Tout a commencé dans un petit appartement parisien avec une passion pour le café et le rêve de partager cette culture française unique.",
+    image: "/images/abt1.png",
+    side: "left"
+  },
+  {
+    year: "2001",
+    title: "Ouverture du premier café",
+    description: "Installation de notre premier établissement rue de Rivoli. Une petite boutique de 30m² qui allait révolutionner l'art du café à Paris.",
+    image: "/images/abt2.png",
+    side: "right"
+  },
+  {
+    year: "2008",
+    title: "L'art du latte",
+    description: "Introduction du latte art dans nos cafés. Nos baristas deviennent de véritables artistes, créant des œuvres éphémères dans chaque tasse.",
+    image: "/images/cafebistrot.png",
+    side: "left"
+  },
+  {
+    year: "2015",
+    title: "Torréfaction artisanale",
+    description: "Lancement de notre propre torréfaction. Sélection rigoureuse des meilleurs grains du monde pour une expérience gustative incomparable.",
+    image: "/images/abt3.png",
+    side: "right"
+  },
+  {
+    year: "2020",
+    title: "Innovation numérique",
+    description: "Adaptation à l'ère moderne avec notre application mobile et notre système de commande en ligne, sans perdre notre âme artisanale.",
+    image: "/images/abt4.png",
+    side: "left"
+  },
+  {
+    year: "2024",
+    title: "L'avenir du café",
+    description: "Aujourd'hui, Milky Deal continue d'innover tout en préservant les traditions françaises. Une nouvelle génération découvre l'art du café.",
+    image: "/images/abt5.png",
+    side: "right"
+  }
+];
+
+const historyStats = [
+  { number: "29", label: "Années d'expertise", suffix: "ans" },
+  { number: "12", label: "Cafés ouverts", suffix: "+" },
+  { number: "150", label: "Collaborateurs passionnés", suffix: "+" },
+  { number: "1M", label: "Tasses servies", suffix: "+" }
+];
+
+const foundersQuote = {
+  text: "Notre vision était simple : transformer chaque pause café en un moment de pure délectation, alliant tradition française et innovation moderne.",
+  author: "Marie & Pierre Dubois",
+  role: "Fondateurs de Milky Deal"
+};
+
 export {
  navLinks,
  cocktailLists,
  mockTailLists,
+ allCocktails,
  profileLists,
  featureLists,
  goodLists,
@@ -148,4 +213,7 @@ export {
  storeInfo,
  socials,
  sliderLists,
+ historyTimeline,
+ historyStats,
+ foundersQuote,
 };

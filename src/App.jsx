@@ -8,6 +8,10 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cocktail from "./components/Cocktail";
 import About from "./components/About";
+import History from "./components/History";
+import Art from "./components/Art";
+import Menu from "./components/Menu";
+import Contact from "./components/Contact";
 
 const App = () => {
     return (
@@ -16,6 +20,10 @@ const App = () => {
             <Hero />
             <Cocktail />
             <About />
+            <History />
+            <Art />
+            <Menu />
+            <Contact />
         </main>
     )
 }
