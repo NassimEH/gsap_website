@@ -18,57 +18,25 @@ const navLinks = [
 ];
 
 const cocktailLists = [
- {
-	name: "Chapel Hill Shiraz",
-	country: "AU",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Caten Malbee",
-	country: "AU",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Rhino Pale Ale",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Irish Guinness",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+  { name: "Espresso Parisien", country: "France", detail: "Serré et intense, 100% arabica torréfié à Paris", price: "€2,50" },
+  { name: "Café Crème", country: "France", detail: "Espresso allongé avec mousse de lait onctueuse", price: "€3,80" },
+  { name: "Noisette", country: "France", detail: "Espresso relevé d’une touche de crème", price: "€3,20" },
+  { name: "Cappuccino à la Française", country: "France", detail: "Espresso, lait vapeur, mousse généreuse", price: "€4,50" },
+  { name: "Café Allongé", country: "France", detail: "Doux et équilibré, extraction plus longue", price: "€2,90" },
+  { name: "Latte Vanille Bourbon", country: "France", detail: "Lait velouté, vanille de Madagascar", price: "€4,90" },
+  { name: "Mocha Chocolat Noir", country: "France", detail: "Espresso, chocolat 70%, lait", price: "€5,20" },
+  { name: "Décaféiné Arabica", country: "France", detail: "Saveur ronde, sans caféine", price: "€3,50" },
 ];
 
 const mockTailLists = [
- {
-	name: "Tropical Bloom",
-	country: "US",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Passionfruit Mint",
-	country: "US",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Citrus Glow",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Lavender Fizz",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+  { name: "Croissant Beurre AOP", country: "Paris", detail: "Pur beurre, croustillant & fondant", price: "€2,40" },
+  { name: "Pain Perdu Brioché", country: "Paris", detail: "Sirop d’érable, crème légère", price: "€7,90" },
+  { name: "Œufs Bénédicte au Saumon", country: "Paris", detail: "Muffin, saumon fumé, sauce hollandaise", price: "€12,50" },
+  { name: "Tartine Avocat & Œuf Poché", country: "Paris", detail: "Pain au levain, avocat, piment d’Espelette", price: "€10,90" },
+  { name: "Assiette Fromages & Charcuteries", country: "France", detail: "Sélection du marché", price: "€13,90" },
+  { name: "Pancakes aux Myrtilles", country: "Paris", detail: "Sirop d’érable, beurre demi-sel", price: "€8,90" },
+  { name: "Granola Maison", country: "Paris", detail: "Yaourt fermier, fruits de saison", price: "€7,50" },
+  { name: "Omelette Fines Herbes", country: "Paris", detail: "Œufs fermiers, ciboulette", price: "€8,50" },
 ];
 
 const profileLists = [
