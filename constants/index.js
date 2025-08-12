@@ -1,49 +1,47 @@
 const navLinks = [
- {
-	id: "cocktails",
-	title: "Cocktails",
- },
- {
-	id: "about",
-	title: "À propos",
- },
- {
-	id: "history",
-	title: "Notre Histoire",
- },
- {
-	id: "work",
-	title: "Nos produits",
- },
- {
-	id: "contact",
-	title: "Contact",
- },
+  { id: 'hero', title: 'Accueil' },
+  { id: 'cocktails', title: 'Cafés & Brunch' },
+  { id: 'about', title: 'À propos' },
+  { id: 'history', title: 'Histoire' },
+  { id: 'art', title: "Art" },
+  { id: 'menu', title: 'Menu Signature' },
+  { id: 'events', title: 'Événements' },
+  { id: 'contact', title: 'Contact' },
 ];
 
+// Listes cafés (les images seront cyclées dynamiquement sur 4 visuels)
 const cocktailLists = [
-  { name: "Espresso Parisien", country: "France", detail: "Serré et intense, 100% arabica torréfié à Paris", price: "€2,50" },
-  { name: "Café Crème", country: "France", detail: "Espresso allongé avec mousse de lait onctueuse", price: "€3,80" },
-  { name: "Noisette", country: "France", detail: "Espresso relevé d’une touche de crème", price: "€3,20" },
-  { name: "Cappuccino à la Française", country: "France", detail: "Espresso, lait vapeur, mousse généreuse", price: "€4,50" },
-  { name: "Café Allongé", country: "France", detail: "Doux et équilibré, extraction plus longue", price: "€2,90" },
-  { name: "Latte Vanille Bourbon", country: "France", detail: "Lait velouté, vanille de Madagascar", price: "€4,90" },
-  { name: "Mocha Chocolat Noir", country: "France", detail: "Espresso, chocolat 70%, lait", price: "€5,20" },
-  { name: "Décaféiné Arabica", country: "France", detail: "Saveur ronde, sans caféine", price: "€3,50" },
+  { id: 1, name: "Espresso Parisien", country: "France", detail: "Serré et intense, 100% arabica torréfié à Paris", price: "€2,50" },
+  { id: 2, name: "Café Crème", country: "France", detail: "Espresso allongé avec mousse de lait onctueuse", price: "€3,80" },
+  { id: 3, name: "Noisette", country: "France", detail: "Espresso relevé d’une touche de crème", price: "€3,20" },
+  { id: 4, name: "Cappuccino à la Française", country: "France", detail: "Espresso, lait vapeur, mousse généreuse", price: "€4,50" },
+  { id: 5, name: "Café Allongé", country: "France", detail: "Doux et équilibré, extraction plus longue", price: "€2,90" },
+  { id: 6, name: "Latte Vanille Bourbon", country: "France", detail: "Lait velouté, vanille de Madagascar", price: "€4,90" },
+  { id: 7, name: "Mocha Chocolat Noir", country: "France", detail: "Espresso, chocolat 70%, lait", price: "€5,20" },
+  { id: 8, name: "Décaféiné Arabica", country: "France", detail: "Saveur ronde, sans caféine", price: "€3,50" },
 ];
 
 const mockTailLists = [
-  { name: "Croissant Beurre AOP", country: "Paris", detail: "Pur beurre, croustillant & fondant", price: "€2,40" },
-  { name: "Pain Perdu Brioché", country: "Paris", detail: "Sirop d’érable, crème légère", price: "€7,90" },
-  { name: "Œufs Bénédicte au Saumon", country: "Paris", detail: "Muffin, saumon fumé, sauce hollandaise", price: "€12,50" },
-  { name: "Tartine Avocat & Œuf Poché", country: "Paris", detail: "Pain au levain, avocat, piment d’Espelette", price: "€10,90" },
-  { name: "Assiette Fromages & Charcuteries", country: "France", detail: "Sélection du marché", price: "€13,90" },
-  { name: "Pancakes aux Myrtilles", country: "Paris", detail: "Sirop d’érable, beurre demi-sel", price: "€8,90" },
-  { name: "Granola Maison", country: "Paris", detail: "Yaourt fermier, fruits de saison", price: "€7,50" },
-  { name: "Omelette Fines Herbes", country: "Paris", detail: "Œufs fermiers, ciboulette", price: "€8,50" },
+  { id: 9, name: "Croissant Beurre AOP", country: "Paris", detail: "Pur beurre, croustillant & fondant", price: "€2,40" },
+  { id: 10, name: "Pain Perdu Brioché", country: "Paris", detail: "Sirop d’érable, crème légère", price: "€7,90" },
+  { id: 11, name: "Œufs Bénédicte au Saumon", country: "Paris", detail: "Muffin, saumon fumé, sauce hollandaise", price: "€12,50" },
+  { id: 12, name: "Tartine Avocat & Œuf Poché", country: "Paris", detail: "Pain au levain, avocat, piment d’Espelette", price: "€10,90" },
+  { id: 13, name: "Assiette Fromages & Charcuteries", country: "France", detail: "Sélection du marché", price: "€13,90" },
+  { id: 14, name: "Pancakes aux Myrtilles", country: "Paris", detail: "Sirop d’érable, beurre demi-sel", price: "€8,90" },
+  { id: 15, name: "Granola Maison", country: "Paris", detail: "Yaourt fermier, fruits de saison", price: "€7,50" },
+  { id: 16, name: "Omelette Fines Herbes", country: "Paris", detail: "Œufs fermiers, ciboulette", price: "€8,50" },
 ];
-
-const allCocktails = [...cocktailLists, ...mockTailLists];
+// Cycle des 4 premières images
+const _cycleImages = [
+  '/images/drink1.png',
+  '/images/drink2.png',
+  '/images/drink3.png',
+  '/images/drink4.png'
+];
+const allCocktails = [...cocktailLists, ...mockTailLists].map((item, idx) => ({
+  ...item,
+  image: _cycleImages[idx % 4]
+}));
 
 const profileLists = [
  {
@@ -61,17 +59,17 @@ const profileLists = [
 ];
 
 const featureLists = [
- "Perfectly balanced blends",
- "Garnished to perfection",
- "Ice-cold every time",
- "Expertly shaken & stirred",
+  "Assemblages parfaitement équilibrés",
+  "Latte art soigné à la perfection",
+  "Température idéale à chaque tasse",
+  "Extraction maîtrisée par nos baristas",
 ];
 
 const goodLists = [
- "Handpicked ingredients",
- "Signature techniques",
- "Bartending artistry in action",
- "Freshly muddled flavors",
+  "Ingrédients soigneusement sélectionnés",
+  "Techniques signature artisanales",
+  "Art barista en action",
+  "Arômes fraîchement extraits",
 ];
 
 const storeInfo = {
@@ -188,17 +186,19 @@ const historyTimeline = [
   }
 ];
 
+// Utilisation de valeurs numériques pour permettre une animation fluide des compteurs
+// Le dernier chiffre sera abrégé en '1M' via une fonction de formatage
 const historyStats = [
-  { number: "29", label: "Années d'expertise", suffix: "ans" },
-  { number: "12", label: "Cafés ouverts", suffix: "+" },
-  { number: "150", label: "Collaborateurs passionnés", suffix: "+" },
-  { number: "1M", label: "Tasses servies", suffix: "+" }
+  { number: 29, label: "Années d'expertise", suffix: "ans", abbreviate: false },
+  { number: 12, label: "Cafés ouverts", suffix: "+", abbreviate: false },
+  { number: 150, label: "Collaborateurs passionnés", suffix: "+", abbreviate: false },
+  { number: 1_000_000, label: "Tasses servies", suffix: "+", abbreviate: true }
 ];
 
 const foundersQuote = {
   text: "Notre vision était simple : transformer chaque pause café en un moment de pure délectation, alliant tradition française et innovation moderne.",
-  author: "Marie & Pierre Dubois",
-  role: "Fondateurs de Milky Deal"
+  author: "Nassim EL HADDAD",
+  role: "Fondateur de Milky Deal"
 };
 
 export {

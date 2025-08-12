@@ -3,6 +3,14 @@ import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 import { historyTimeline, historyStats, foundersQuote } from '../../constants/index.js';
 
+// Fonction utilitaire pour formater les nombres (abbreviation k / M si nécessaire)
+const formatNumber = (value, abbreviate) => {
+  if (!abbreviate) return value;
+  if (value >= 1_000_000) return (value / 1_000_000).toFixed(0) + 'M';
+  if (value >= 1_000) return (value / 1_000).toFixed(0) + 'k';
+  return value;
+};
+
 const History = () => {
   useGSAP(() => {
     // Animation du titre principal
@@ -26,23 +34,27 @@ const History = () => {
       }, '-=0.5');
 
     // Animation des statistiques avec compteurs
-    historyStats.forEach((stat, index) => {
-      const statElement = document.querySelector(`#stat-${index} .stat-number`);
-      if (statElement) {
-        gsap.fromTo(statElement, 
-          { textContent: 0 },
-          {
-            textContent: stat.number,
-            duration: 2,
-            ease: 'power1.inOut',
-            snap: { textContent: 1 },
-            scrollTrigger: {
-              trigger: `#stat-${index}`,
-              start: 'top 80%'
-            }
-          }
-        );
-      }
+  historyStats.forEach((stat, index) => {
+      const wrapper = document.querySelector(`#stat-${index}`);
+      const statElement = wrapper?.querySelector('.stat-number');
+      if (!statElement) return;
+
+      const target = stat.number;
+      const obj = { val: 0 };
+
+      gsap.to(obj, {
+        val: target,
+        duration: 2,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: `#stat-${index}`,
+          start: 'top 80%'
+        },
+        onUpdate: () => {
+          const current = Math.floor(obj.val);
+          statElement.textContent = formatNumber(current, stat.abbreviate);
+        }
+      });
     });
 
     // Animation des éléments de la timeline
@@ -100,7 +112,11 @@ const History = () => {
   }, []);
 
   return (
-    <section id="history" className="min-h-screen py-20">
+    <section id="history" className="min-h-screen py-20" aria-labelledby="history-heading">
+      <div className="section-heading-wrapper text-center pb-8">
+        <h2 id="history-heading" className="text-5xl font-modern-negra text-gradient tracking-wide">HISTOIRE</h2>
+        <p className="mt-4 text-white-100 max-w-3xl mx-auto">Un voyage de passion et d'évolution dans l'art du café.</p>
+      </div>
       {/* Hero Section */}
       <div className="container mx-auto px-5 text-center mb-20">
         <h1 className="text-6xl md:text-8xl font-modern-negra mb-8 text-gradient">
@@ -112,20 +128,7 @@ const History = () => {
         </p>
       </div>
 
-      {/* Statistiques */}
-      <div className="container mx-auto px-5 mb-32">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {historyStats.map((stat, index) => (
-            <div key={index} id={`stat-${index}`} className="text-center space-y-2">
-              <div className="text-4xl md:text-6xl font-modern-negra text-yellow">
-                <span className="stat-number">0</span>
-                <span className="text-3xl md:text-4xl">{stat.suffix}</span>
-              </div>
-              <p className="text-sm md:text-base text-white-100">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+  {/* Statistiques retirées selon demande */}
 
       {/* Timeline */}
       <div className="timeline-container relative max-w-6xl mx-auto px-5">

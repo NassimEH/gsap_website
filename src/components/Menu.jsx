@@ -40,19 +40,21 @@ const Menu = () => {
  
  return (
 	<section id="menu" aria-labelledby="menu-heading">
+	 <div className="section-heading-wrapper text-center py-12">
+	   <h2 id="menu-heading" className="text-5xl font-modern-negra text-gradient tracking-wide">MENU SIGNATURE</h2>
+	   <p className="mt-4 text-white-100 max-w-3xl mx-auto">Sélection tournante de cafés & créations torréfiées.</p>
+	 </div>
 	 <img src="/images/slider-left-leaf.png" alt="left-leaf" id="m-left-leaf" />
 	 <img src="/images/slider-right-leaf.png" alt="right-leaf" id="m-right-leaf" />
 	 
-	 <h2 id="menu-heading" className="sr-only">
-		Cocktail Menu
-	 </h2>
+	 {/* sr-only heading removed in favor of visible heading above */}
 	 
-	 <nav className="cocktail-tabs" aria-label="Cocktail Navigation">
+	<nav className="cocktail-tabs" aria-label="Navigation Menu Signature">
 		{allCocktails.map((cocktail, index) => {
 		 const isActive = index === currentIndex;
 		 
 		 return (
-			<button key={cocktail.id} className={`
+			<button key={cocktail.id || cocktail.name} className={`
 				${isActive
 				 ? 'text-white border-white'
 				 : 'text-white/50 border-white/50'}
@@ -77,13 +79,14 @@ const Menu = () => {
 		 </button>
 		</div>
 		
-		<div className="cocktail">
-		 <img src={currentCocktail.image} className="object-contain"/>
+		<div className="cocktail relative">
+		 <img src={currentCocktail.image} alt={currentCocktail.name} className="object-contain drop-shadow-2xl transition-all duration-500"/>
+		 <div className="absolute inset-0 pointer-events-none opacity-30 mix-blend-overlay bg-gradient-to-tr from-yellow/10 via-transparent to-white/5" />
 		</div>
 		
 		<div className="recipe">
 		 <div ref={contentRef} className="info">
-			<p>Recipe for:</p>
+			<p>Création :</p>
 			<p id="title">{currentCocktail.name}</p>
 		 </div>
 		 

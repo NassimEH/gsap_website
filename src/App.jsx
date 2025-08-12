@@ -12,6 +12,8 @@ import History from "./components/History";
 import Art from "./components/Art";
 import Menu from "./components/Menu";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Events from "./components/Events";
 
 const App = () => {
     return (
@@ -23,7 +25,9 @@ const App = () => {
             <History />
             <Art />
             <Menu />
+            <Events />
             <Contact />
+            <Footer />
         </main>
     )
 }

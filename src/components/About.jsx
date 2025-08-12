@@ -26,15 +26,19 @@ const About = () => {
  })
  
  return (
-    <div id="about">
+      <div id="about" aria-labelledby="about-heading">
+       <div className="section-heading-wrapper text-center py-12">
+          <h2 id="about-heading" className="text-5xl font-modern-negra text-gradient tracking-wide">À PROPOS</h2>
+          <p className="mt-4 text-white-100 max-w-3xl mx-auto">Notre philosophie du café : authenticité, artisanat et hospitalité.</p>
+       </div>
      <div className="mb-16 md:px-0 px-5">
         <div className="content">
          <div className="md:col-span-8">
             <p className="badge">Art du café français</p>
-            <h2>
+            <h3 className="text-3xl md:text-4xl font-modern-negra mt-6">
              Là où chaque détail compte <span className="text-white">-</span>
                 de la torréfaction au service
-            </h2>
+            </h3>
          </div>
          
          <div className="sub-content">

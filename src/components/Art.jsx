@@ -26,7 +26,11 @@ const Art = () => {
  })
  
  return (
-  <div id="art">
+    <div id="art" aria-labelledby="art-heading">
+     <div className="section-heading-wrapper text-center py-12">
+         <h2 id="art-heading" className="text-5xl font-modern-negra text-gradient tracking-wide">ART</h2>
+         <p className="mt-4 text-white-100 max-w-3xl mx-auto">Techniques, textures et saveurs maîtrisées.</p>
+     </div>
    <div className="container mx-auto h-full pt-20">
     <h2 className="will-fade">L'ART</h2>
 

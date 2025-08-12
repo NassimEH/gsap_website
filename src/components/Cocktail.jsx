@@ -19,13 +19,17 @@ const Cocktails = () => {
  })
  
  return (
-    <section id="cocktails" className="noisy">
+      <section id="cocktails" className="noisy" aria-labelledby="cocktails-heading">
+       <div className="section-heading-wrapper text-center py-12">
+          <h2 id="cocktails-heading" className="text-5xl font-modern-negra text-gradient tracking-wide">CAFÉS & BRUNCH</h2>
+          <p className="mt-4 text-white-100 max-w-3xl mx-auto">Nos signatures café et formules brunch artisanales.</p>
+       </div>
      <img src="/images/cocktail-left-leaf.png" alt="feuille gauche" id="c-left-leaf" />
      <img src="/images/cocktail-right-leaf.png" alt="feuille droite" id="c-right-leaf" />
      
      <div className="list">
         <div className="popular">
-         <h2>Nos cafés signature :</h2>
+                   <h3 className="text-2xl font-bold mb-4">Nos cafés signature :</h3>
          
          <ul>
             {cocktailLists.map(({ name, country, detail, price }) => (
@@ -41,7 +45,7 @@ const Cocktails = () => {
         </div>
         
         <div className="loved">
-         <h2>Nos formules brunch :</h2>
+                   <h3 className="text-2xl font-bold mb-4">Nos formules brunch :</h3>
          
          <ul>
             {mockTailLists.map(({ name, country, detail, price }) => (
